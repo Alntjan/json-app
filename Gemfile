@@ -2,7 +2,6 @@ source 'https://rubygems.org'
 
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-ruby "2.3.0"
 gem 'rails', '~> 5.0.0'
 gem 'shopify_app'
 gem 'activeresource', github: 'rails/activeresource'
