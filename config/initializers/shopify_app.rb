@@ -5,6 +5,7 @@ ShopifyApp.configure do |config|
   config.scope = "read_orders, read_products"
   config.embedded_app = true
   config.webhooks = [
-    {topic: 'orders/paid', address: 'https://nova-mws.herokuapp.com/webhooks/orders-paid', format: 'json'},
+    {topic: 'orders/create', address: 'https://nova-mws.herokuapp.com/webhooks/orders_create', format: 'json'},
+    {topic: 'orders/paid', address: 'https://nova-mws.herokuapp.com/webhooks/orders_paid', format: 'json'},
   ]
 end
