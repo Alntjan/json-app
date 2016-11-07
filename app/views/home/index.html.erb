@@ -13,6 +13,6 @@
 
 <ul>
   <% @orders.each do |order| %>
-    <li><%= link_to order.name, "https://#{@shop_session.url}/admin/orders/#{order.id}", target: "_top" %> <%= order.subtotal_price - order.total_tax %></li>
+    <li><%= link_to order.name, "https://#{@shop_session.url}/admin/orders/#{order.id}", target: "_top" %> <%= order.subtotal_price %></li>
   <% end %>
 </ul>
