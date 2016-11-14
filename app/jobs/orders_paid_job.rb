@@ -5,9 +5,8 @@ class OrdersPaidJob < ActiveJob::Base
     shop.with_shopify_session do
       puts "Webhook recebido!"
       json_data = JSON.parse webhook
-      @encomenda = json_data['id']
-      puts "ORDER ID: #{@encomenda}"
-
+      @encomenda = Order.create(shop_id: shop.id, shopify_order_id: json_data['id'], order_data: :webhook)
+      @encomenda.save
     end
   end
 end
