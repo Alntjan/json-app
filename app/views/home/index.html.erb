@@ -10,7 +10,7 @@
 <% end %>
 
 <h2>Products</h2>
-
+<a href="/orders">ORDERS</a>
 <ul>
   <% @orders.each do |order| %>
     <li><%= link_to order.name, "https://#{@shop_session.url}/admin/orders/#{order.id}", target: "_top" %> <%= order.subtotal_price %></li>
