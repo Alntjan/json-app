@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Shop:</strong>
+  <%= @order.shop_id %>
+</p>
+
+<p>
+  <strong>Shopify order:</strong>
+  <%= @order.shopify_order_id %>
+</p>
+
+<p>
+  <strong>Order data:</strong>
+  <%= @order.order_data %>
+</p>
+
+<%= link_to 'Edit', edit_order_path(@order) %> |
+<%= link_to 'Back', orders_path %>
