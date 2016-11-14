@@ -4,11 +4,9 @@ class OrdersPaidJob < ActiveJob::Base
 
     shop.with_shopify_session do
       puts "Webhook recebido!"
-      data = ActiveSupport::JSON.decode(request.body.read)
-      puts "Identificação da Loja: #{shop.id}"
-      puts "Identificação da Encomenda: #{data.id}"
-
-      # @paid_order = Order.new({ "shop_id": "acme", "shopify_order_id": params[:webhook.], "order_data": "" })
+      data = JSON.parse(request.body.read)
+      puts "Cheguei aqui!"
+      puts "Olha para isto #{data.id}"
     end
   end
 end
