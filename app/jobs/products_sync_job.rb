@@ -30,7 +30,8 @@ class ProductsSyncJob < ApplicationJob
       puts "Doing page #{page}/#{nb_pages}..."
       products = ShopifyAPI::Product.find( :all, :params => { :limit => 250, :page => page } )
       products.each do |product|
-        puts product.title
+        @product = Product.new(id: product.id, handle: product.handle , title: product.title, vendor: product.vendor)
+        @product.save
       end
     end
     puts "Over and out."
