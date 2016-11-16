@@ -3,7 +3,7 @@ class ProductsSyncJob < ApplicationJob
 
   def perform
     product_count = ShopifyAPI::Product.count
-    nb_pages      = (product_count / 250.0).ceil
+    nb_pages = (product_count / 250.0).ceil
 
     # Do we actually have any work to do?
 
