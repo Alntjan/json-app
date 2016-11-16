@@ -2,7 +2,6 @@ class ProductsSyncJob < ApplicationJob
   queue_as :default
 
   def perform
-    # How many.
     product_count = ShopifyAPI::Product.count
     nb_pages      = (product_count / 250.0).ceil
 
